@@ -28,9 +28,15 @@ echo "task_id: " ${SLURM_ARRAY_TASK_ID}
 
 run=${1}
 nChunks=${2}
-
-output_dir=${2}
 input_file_path=${3};
+
+
+spline_path=${4}  
+eta_crrection_path=${5}  
+aodbPath=${6}   
+pileUpCorrection=${7}  
+
+
 
 chunk_index=$((${SLURM_ARRAY_TASK_ID}))
 
@@ -52,9 +58,12 @@ fi
 
 
 #18r
-spline_path='/lustre/nyx/alice/users/mciupek/TPCSpline/Splines/LHC18r/withoutPileup/TPCPIDResponseOADB_2020_07_22_LHC18r_pass3_woPileupcor.root'
-eta_crrection_path='/lustre/nyx/alice/users/mciupek/TPCSpline/Splines/LHC18r/withoutPileup/TPCetaMaps_2020_07_22_LHC18r_pass3_woPileupcor.root'
+#spline_path='/lustre/nyx/alice/users/mciupek/TPCSpline/Splines/LHC18r/withoutPileup/TPCPIDResponseOADB_2020_07_22_LHC18r_pass3_woPileupcor.root'
+#eta_crrection_path='/lustre/nyx/alice/users/mciupek/TPCSpline/Splines/LHC18r/withoutPileup/TPCetaMaps_2020_07_22_LHC18r_pass3_woPileupcor.root'
 #18q
+#spline_path='/lustre/nyx/alice/users/mciupek/TPCSpline/Splines/LHC18q/withoutpileup/TPCPIDResponseOADB_2020_08_13_18q_pass3_It3.root'
+#eta_crrection_path='/lustre/nyx/alice/users/mciupek/TPCSpline/Splines/LHC18q/withoutpileup/TPCetaMaps_2020_08_13_18q_pass3_It3.root'
+
 
 #spline_path="/lustre/nyx/alice/users/mciupek/TPCSpline/Splines/LHC18q/withoutpileup/TPCPIDResponseOADB_2020_08_12_18q_pass3_It9.root"
 #eta_crrection_path="/lustre/nyx/alice/users/mciupek/TPCSpline/Splines/LHC18q/withoutpileup/TPCetaMaps_2020_08_12_18q_pass3_It9.root"
@@ -75,13 +84,13 @@ eta_crrection_path='/lustre/nyx/alice/users/mciupek/TPCSpline/Splines/LHC18r/wit
 
 
 
-pileUpCorrection="/lustre/alice/users/miranov/NOTESData/alice-tpc-notes/JIRA/PWGPP-538/new/alice/data/2018/LHC18r/pass3/AOD_FilterTrees/fit_version_08062020/dEdxFitLight.root"  
+#pileUpCorrection="/lustre/alice/users/miranov/NOTESData/alice-tpc-notes/JIRA/PWGPP-538/new/alice/data/2018/LHC18r/pass3/AOD_FilterTrees/fit_version_08062020/dEdxFitLight.root"  
 
 pidIndex=1
 #run=296690 
 passNumber=3
 recoPass="pass3"                                                     
-aodbPath="/lustre/nyx/alice/users/xbai/work/SkimmedDataAna/Run18/TPCsplines/TreePrduction/lib/OADB"     
+#aodbPath="/lustre/nyx/alice/users/xbai/work/SkimmedDataAna/Run18/TPCsplines/TreePrduction/lib/OADB"     
 
 
 

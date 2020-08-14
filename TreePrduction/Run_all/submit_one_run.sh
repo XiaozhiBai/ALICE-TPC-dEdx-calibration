@@ -18,7 +18,16 @@ file_name=${8}
 output_base_dir=${9}
 current_dir=${10}
 
+
 max_chunks=${11}
+
+
+spline_path=${12} 
+eta_crrection_path=${13}  
+aodbPath=${14}  
+pileUpCorrection=${15} 
+
+
 
 if [ "${data}"x = "data"x ]
 then
@@ -34,6 +43,12 @@ fi
 #echo "input production id" $prod_id
 #echo "input file name"=$file_name
 #echo "output dir path" $output_base_dir
+
+#echo $spline_path  
+#echo $eta_crrection_path 
+#echo $aodbPath 
+#echo $pileUpCorrection
+
 
 output_dir=${output_base_dir}/$data/$year/$run_pariod/$run/$pass
 
@@ -56,9 +71,6 @@ nChunks=`cat $output_dir/filtered.list | wc -l`
     cp /lustre/nyx/alice/users/xbai/work/SkimmedDataAna/Run18/TPCsplines/TreePrduction/fitdEdxCorrectionFiltered.C $output_dir/
     cd $output_dir
 
-#$((${SLURM_ARRAY_TASK_ID}+1)) 
-
-    sbatch --array=1-${nChunks}   $current_dir/SubmitJobs2Nyx.sh $run  ${output_dir} ${input_file_path}  3 9 
-
+    sbatch --array=1-${nChunks}   $current_dir/SubmitJobs2Nyx.sh $run  ${output_dir} ${input_file_path}   $spline_path   $eta_crrection_path  $aodbPath  $pileUpCorrection
 echo "submit is done for run :" $run
 
