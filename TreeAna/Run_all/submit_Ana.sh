@@ -33,8 +33,8 @@ exec 6<inputRunList/$run_list
 while read -u 6 runNumber
 do
     echo "run index" $run_counting
- #   [[ run_counting -gt MAX_runs ]] && exit 0;
-#    ./submit_one_run.sh $input_base_path $data $year $run_pariod $runNumber $pass $file_name $output_base_dir $current_dir 
+    [[ run_counting -gt MAX_runs ]] && exit 0;
+    ./submit_one_run.sh $input_base_path $data $year $run_pariod $runNumber $pass $file_name $output_base_dir $current_dir 
     ((run_counting=run_counting+1))
 done
 
