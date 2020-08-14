@@ -6,4 +6,4 @@ echo $Dir_name
 
 mkdir -p ~/temp/$Dir_name
 
-hadd -k  /u/xbai/temp/$Dir_name/splineQA.root output/data/2018/LHC18q/*/pass3/*/hist.root
+hadd -k  /u/xbai/temp/$Dir_name/splineQA.root output/data/2018/LHC18?/*/pass3/*/hist.root

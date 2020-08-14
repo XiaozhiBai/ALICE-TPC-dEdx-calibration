@@ -33,19 +33,19 @@ exec 6<inputRunList/$run_list
 while read -u 6 runNumber
 do
     echo "run index" $run_counting
-    [[ run_counting -gt MAX_runs ]] && exit 0;
-    ./submit_one_run.sh $input_base_path $data $year $run_pariod $runNumber $pass $file_name $output_base_dir $current_dir 
+ #   [[ run_counting -gt MAX_runs ]] && exit 0;
+#    ./submit_one_run.sh $input_base_path $data $year $run_pariod $runNumber $pass $file_name $output_base_dir $current_dir 
     ((run_counting=run_counting+1))
 done
 
 run_pariod=LHC18q #LHC18q, LHC18r.
 run_list=LHC18q_pass3_full.txt #LHC18r_pass3_full.txt
 
-exit 0;
+
 
 run_counting=1;
 exec 6>&1
-exec 6<../inputRunList/$run_list
+exec 6<inputRunList/$run_list
 
 while read -u 6 runNumber
 do
